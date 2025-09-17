@@ -6,5 +6,5 @@ npm run dev
 
 
 NB:
-~Disable the policy to run the script momentarily~
+~Disable the policy to run the script momentarily
 { Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass }
