@@ -1,0 +1,33 @@
+.button1{
+    width: 100px;
+    height: 200px;
+    color: aliceblue;
+    background-color: #0096e7;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.button1 img{
+    max-width: 100%;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.button1:hover{
+    background-color: #006ba4;
+    transition: 1s;
+}
+
+.btn-white{
+    background-color: aliceblue;
+}
+
+.btn-white:hover{
+    background-color: #43617c;
+    transition: 1s;
+}
