@@ -1,6 +1,17 @@
 import { Link } from "react-router-dom";
+import React, { useState } from "react";
+
 
 export default function SignUp() {
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+    fetch('http://localhost:5000/api/data')
+        .then(res => res.json())
+        .then(result => setData(result.message))
+        .catch(err => console.error('Error:', err));
+    }, []);
+
     return (
         <>
             <div className="top-left" style= {{top:"0", left:"0"}}>
@@ -59,23 +70,23 @@ export default function SignUp() {
                     </h1>
 
                     <form id="login-form" style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '25px', textAlign:"left" }}>
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', gap: '5px' }}>
-                        <label htmlFor="email" style={{ color: 'aliceblue', fontWeight: 'lighter' }}>
-                        Email Address
-                        </label>
-                        <input type="email" id="login-email" required style={{ height: '25px' }} />
-                    </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', gap: '5px' }}>
+                            <label htmlFor="email" style={{ color: 'aliceblue', fontWeight: 'lighter' }}>
+                            Email Address
+                            </label>
+                            <input type="email" id="signup-email" required style={{ height: '25px' }} />
+                        </div>
 
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', gap: '5px' }}>
-                        <label htmlFor="password" style={{ color: 'aliceblue', fontWeight: 'lighter' }}>
-                        Password
-                        </label>
-                        <input type="password" id="login-pass" required style={{ height: '25px' }} />
-                    </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', gap: '5px' }}>
+                            <label htmlFor="password" style={{ color: 'aliceblue', fontWeight: 'lighter' }}>
+                            Password
+                            </label>
+                            <input type="password" id="signup-pass" required style={{ height: '25px' }} />
+                        </div>
                     </form>
 
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px' }}>
-                    <button id="login-button" className="button1" style={{ width: '100px', height: '50px', fontWeight: '500' }}>
+                    <button id="signup-button" className="button1" style={{ width: '100px', height: '50px', fontWeight: '500' }}>
                         Sign Up
                     </button>
 
